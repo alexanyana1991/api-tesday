@@ -72,7 +72,7 @@ Once server is up and running, open **api-testday-api** container's CLI and hit 
 
 ## Requests
 
-To create testing request would i recommend you to download Postman desctop application (`https://www.postman.com/downloads/`)
+To create testing request i would recommend you to download Postman desctop application (`https://www.postman.com/downloads/`)
 
 # What to add
 
