@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  db:
+    container_name: testday_db
+    image: mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: api_testday
+      MYSQL_USER: api_testday
+      MYSQL_PASSWORD: test123
+      
+  api-testday-api:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-testday-api
+    depends_on:
+      - testday_db
+    ports:
+      - '8080:8080'

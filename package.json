@@ -1,0 +1,34 @@
+{
+  "name": "api-testday",
+  "version": "1.0.0",
+  "description": "Your objective is to create a web service, which provides an REST API to perform CRUD data operations , i.e. creating, reading, updating and deleting shops stored in an SQL database. The structure of the API is defined in the specification, which you can find **[here](https://app.swaggerhub.com/apis/heu-pilsen/testday-api/1.0.1)**.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd nodemon ./src/server/index.js",
+    "docker": "env-cmd node ./src/server/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoldosh/api-testday.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smoldosh/api-testday/issues"
+  },
+  "homepage": "https://github.com/smoldosh/api-testday#readme",
+  "dependencies": {
+    "@prisma/client": "^4.1.0",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "prisma": "^4.1.0"
+  },
+  "prisma": {
+    "schema": "src/db/prisma/schema.prisma"
+  }
+}

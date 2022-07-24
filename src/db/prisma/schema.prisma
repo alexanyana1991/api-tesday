@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Shop {
+  id                     Int                      @id @default(autoincrement()) @db.UnsignedInt
+  ownerId                Int                      @db.UnsignedInt
+  name                   String                   @db.VarChar(255)
+  url                    String?                  @unique(map: "url") @db.VarChar(255)
+  email                  String                   @db.VarChar(50)
+  orderPhone             String?                  @db.VarChar(20)
+  phone                  String?                  @db.VarChar(20)
+  importUrl              String?                  @db.VarChar(255)
+  status                 Shop_status
+  deactivationReason     Shop_deactivationReason?
+  termsAccepted          Boolean                  @default(false)
+  questionnaireRecipient String?                  @db.VarChar(50)
+  questionnaireSender    String?                  @db.VarChar(50)
+  certifiedAgreementDate DateTime?                @db.Timestamp(0)
+  customerId             String?                  @db.Char(36)
+  createdAt              DateTime?                @db.Timestamp(0)
+  updatedAt              DateTime?                @db.Timestamp(0)
+}
+
+enum Shop_status {
+  new
+  ppc
+  free
+  blocked
+  to_delete
+}
+
+enum Shop_deactivationReason {
+  admin
+  bad_delivery @map("bad-delivery")
+  bad_price    @map("bad-price")
+  bad_url      @map("bad-url")
+  condition
+  debtor
+  not_active   @map("not-active")
+  no_credit    @map("no-credit")
+  not_xml      @map("not-xml")
+  shop
+}
