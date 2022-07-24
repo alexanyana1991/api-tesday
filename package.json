@@ -7,16 +7,6 @@
     "dev": "env-cmd nodemon ./src/server/index.js",
     "docker": "env-cmd node ./src/server/index"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smoldosh/api-testday.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/smoldosh/api-testday/issues"
-  },
-  "homepage": "https://github.com/smoldosh/api-testday#readme",
   "dependencies": {
     "@prisma/client": "^4.1.0",
     "env-cmd": "^10.1.0",
