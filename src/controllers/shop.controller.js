@@ -49,7 +49,6 @@ class ShopController {
       );
       res.status(200).send(updateShop);
     } catch (e) {
-      console.log(e);
       next(e);
     }
   }
