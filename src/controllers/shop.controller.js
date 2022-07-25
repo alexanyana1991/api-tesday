@@ -24,7 +24,6 @@ class ShopController {
   async deleteShops(req, res, next) {
     try {
       const deletedShops = await shopService.deleteShops();
-      console.log(deletedShops);
       res.status(204).send();
     } catch (e) {
       next(e);
@@ -50,6 +49,7 @@ class ShopController {
       );
       res.status(200).send(updateShop);
     } catch (e) {
+      console.log(e);
       next(e);
     }
   }

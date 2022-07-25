@@ -16,6 +16,7 @@ class ShopService {
 
   // Create shop
   async createShop(data) {
+    const url = data.url || ''
     const shopExist = await prisma.shop.findUnique({
       where: {
         url,

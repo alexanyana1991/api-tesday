@@ -5,13 +5,13 @@ const shopMiddleware = require('../middleware/shop.middleware');
 
 router.get('/shops', shopController.findAllShops);
 
-router.post('/shops', shopMiddleware.validateShop, shopController.insertShop);
+router.post('/shops', shopMiddleware.createInputValidation, shopController.insertShop);
 
 router.delete('/shops', shopController.deleteShops);
 
 router.get('/shops/:id', shopController.findShop);
 
-router.put('/shops/:id',shopMiddleware.validateShop,shopController.updateShop);
+router.put('/shops/:id',shopMiddleware.updateInputValidation,shopController.updateShop);
 
 router.delete('/shops/:id', shopController.deleteShop);
 

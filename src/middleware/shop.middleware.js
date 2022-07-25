@@ -1,11 +1,21 @@
-const shopSchema = require('../validators/shop.schema');
+const {createshopSchema, updateshopSchema} = require('../validators/shop.schema');
 const { ValidationError } = require('../error/error');
 
 class ShopMiddleware {
-  // Validation of request body
-  async validateShop(req, res, next) {
+  //Create validation of request body
+  async createInputValidation(req, res, next) {
     try {
-      await shopSchema.validate({ body: req.body });
+      await createshopSchema.validate({ body: req.body });
+      next();
+    } catch (e) {
+      next(new ValidationError());
+    }
+  }
+
+  // validation of request body
+  async updateInputValidation(req, res, next) {
+    try {
+      await updateshopSchema.validate({ body: req.body });
       next();
     } catch (e) {
       next(new ValidationError());
