@@ -85,3 +85,4 @@ I would recomend to implement several things for this application.
 7. Wether developers decide to make only primitive queries and won't do some sofisticated computation into database i would like to recommend use MongoDB istead MariaDB.
 8. It would be good idea to add frontend to this project wether this api would be used on the client side
 9. In case of Shop table which is inside of the MariaDB i would recomend to change several fields rules.
+10. Add swagger
