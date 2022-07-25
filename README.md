@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
--   [Intro](#intro)
 -   [API](#api)
 -   [Features Overview](#features-overview)
 -   [Getting Started](#getting-started)
